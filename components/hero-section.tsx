@@ -7,7 +7,6 @@ export function HeroSection() {
     { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Audyhidayat31' },
     { icon: <MessageCircle className="w-5 h-5" />, href: 'https://wa.me/081297472004' },
     { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/audyyhdytz/' },
-    { icon: <MoreHorizontal className="w-5 h-5" />, href: '#' },
   ]
 
   return (
