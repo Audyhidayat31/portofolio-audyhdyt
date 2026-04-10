@@ -98,7 +98,7 @@ export function AchievementSection() {
   const [viewingCert, setViewingCert] = useState<string | null>(null)
 
   return (
-    <section id="achievement" className="relative py-32 px-6 overflow-hidden">
+    <section id="achievement" className="relative py-20 md:py-32 px-6 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] opacity-10"></div>
 

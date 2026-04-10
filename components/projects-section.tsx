@@ -38,10 +38,10 @@ export function ProjectsSection() {
   const [hoveredId, setHoveredId] = useState<number | null>(null)
 
   return (
-    <section id="projects" className="py-32 px-6">
+    <section id="projects" className="py-20 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Proyek <span className="text-primary">Terpilih</span>
           </h2>

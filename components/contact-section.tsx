@@ -12,12 +12,12 @@ export function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-32 px-6 relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 px-6 relative overflow-hidden">
       {/* Decorative Blur */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/5 blur-[150px] opacity-30"></div>
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="rounded-3xl bg-slate-900/50 border border-slate-800 p-12 md:p-20 text-center space-y-12 backdrop-blur-sm">
+        <div className="rounded-3xl bg-slate-900/50 border border-slate-800 p-8 md:p-20 text-center space-y-12 backdrop-blur-sm">
           {/* Heading */}
           <div className="space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold text-white">

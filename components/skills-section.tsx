@@ -19,10 +19,10 @@ export function SkillsSection() {
   ]
 
   return (
-    <section id="skills" className="py-32 px-6 relative">
+    <section id="skills" className="py-20 md:py-32 px-6 relative">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-20 text-center">
+        <div className="mb-12 md:mb-20 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Keahlian <span className="text-primary">& Teknologi</span>
           </h2>

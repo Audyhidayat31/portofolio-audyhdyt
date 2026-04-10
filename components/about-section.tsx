@@ -7,11 +7,11 @@ export function AboutSection() {
   ]
 
   return (
-    <section id="about" className="relative py-32 px-6 overflow-hidden">
+    <section id="about" className="relative py-20 md:py-32 px-6 overflow-hidden">
       <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -translate-x-1/2 opacity-20"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
             <div className="space-y-4">
