@@ -1,0 +1,22 @@
+import "./globals.css";
+import MovingBackground from "@/components/MovingBackground"; // Sesuaikan path
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="id">
+      <body className="relative min-h-screen text-white antialiased">
+        {/* Render background di lapisan paling bawah */}
+        <MovingBackground />
+
+        {/* Konten portofolio utama akan berada di atas background */}
+        <main className="relative z-10">
+          {children}
+        </main>
+      </body>
+    </html>
+  );
+}
