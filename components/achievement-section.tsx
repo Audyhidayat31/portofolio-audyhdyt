@@ -1,56 +1,102 @@
-'use client'
-
-import { GraduationCap, Award, BookOpen, Star, Download, ExternalLink } from 'lucide-react'
+"use client"
+import { GraduationCap, Award, BookOpen, Star, Download, ExternalLink, Eye, X } from 'lucide-react'
 import Image from 'next/image'
+import { useState } from 'react'
 
 const achievements = [
   {
     id: 1,
     year: '2023 - 2027',
     title: 'Universitas Bina Sarana Informatika',
-    subtitle: 'S1 Fakultas Teknik & Informatika',
+    organization: 'S1 Fakultas Teknik & Informatika',
     description: 'Sedang menempuh pendidikan sarjana dengan fokus pada pengembangan perangkat lunak dan sistem cerdas.',
     icon: <GraduationCap className="w-6 h-6" />,
-    image: '/cert-placeholder.png', 
-    side: 'left',
-    downloadUrl: '#'
+    certificate: null,
+    skills: ['Computer Science', 'Software Engineering'],
+    side: 'left'
   },
   {
     id: 2,
-    year: '2023',
-    title: 'PCAP: Programming Essentials in Python',
-    subtitle: 'Python Institute',
-    description: 'Meraih sertifikasi profesional bahasa pemrograman Python, mencakup dasar-dasar hingga konsep OOP.',
+    year: '2025',
+    title: 'Profesional Programmer With Golang',
+    organization: 'Programmer Zaman Now',
+    description: 'Penyelesaian program komprehensif yang mencakup fundamental bahasa Go hingga pengembangan aplikasi backend yang scalable.',
     icon: <Award className="w-6 h-6" />,
-    image: '/cert-placeholder.png',
-    side: 'right',
-    downloadUrl: '#'
+    certificate: '/certificate/Profesional Programmer With Golang.pdf',
+    skills: ['Golang', 'Concurrency', 'Goroutines', 'Web API'],
+    side: 'right'
   },
   {
     id: 3,
     year: '2024',
-    title: 'AWS Certified Cloud Practitioner',
-    subtitle: 'Amazon Web Services',
-    description: 'Pemahaman mendalam tentang infrastruktur cloud AWS, keamanan, dan layanan inti cloud.',
+    title: 'CCNA: Introduction to Networks',
+    organization: 'Cisco Networking Academy',
+    description: 'Pelatihan mendalam tentang arsitektur, fungsi, dan komponen jaringan komputer serta protokol TCP/IP.',
     icon: <Award className="w-6 h-6" />,
-    image: '/cert-placeholder.png',
-    side: 'left',
-    downloadUrl: '#'
+    certificate: '/certificate/CCNA Introduction to Networks.pdf',
+    skills: ['Networking', 'Cisco', 'TCP/IP', 'Ethernet'],
+    side: 'left'
   },
   {
     id: 4,
     year: '2024',
-    title: 'Fullstack Web Development Bootcamp',
-    subtitle: 'Digital Talent Scholarship',
-    description: 'Penyelesaian program intensif dalam pengembangan aplikasi web modern menggunakan React dan Node.js.',
-    icon: <BookOpen className="w-6 h-6" />,
-    image: '/cert-placeholder.png',
-    side: 'right',
-    downloadUrl: '#'
+    title: 'MikroTik Certified Network Associate',
+    organization: 'MikroTik Training Center',
+    description: 'Sertifikasi teknis dalam mengonfigurasi dan mengelola perangkat MikroTik untuk solusi jaringan profesional.',
+    icon: <Award className="w-6 h-6" />,
+    certificate: '/certificate/Mikrotik MTCNA.pdf',
+    skills: ['MikroTik', 'RouterOS', 'Firewall', 'Routing'],
+    side: 'right'
+  },
+  {
+    id: 5,
+    year: '2023',
+    title: 'PCAP: Programming Essentials in Python',
+    organization: 'Python Institute',
+    description: 'Validasi kemampuan pemrograman Python tingkat lanjut, mencakup penanganan eksepsi dan pemrograman berorientasi objek.',
+    icon: <Award className="w-6 h-6" />,
+    certificate: '/certificate/PCAP - Programming Essentials in Python.pdf',
+    skills: ['Python', 'OOP', 'Algorithms', 'Data Structures'],
+    side: 'left'
+  },
+  {
+    id: 6,
+    year: '2024',
+    title: 'Workshop Pemrograman Aplikasi AI',
+    organization: 'Universitas Bina Sarana Informatika',
+    description: 'Pengembangan aplikasi modern dengan integrasi model kecerdasan buatan untuk meningkatkan fungsionalitas sistem.',
+    icon: <Award className="w-6 h-6" />,
+    certificate: '/certificate/Workshop Programming Untuk Pengembangan Aplikasi AI.pdf',
+    skills: ['AI Integration', 'Machine Learning', 'API Development'],
+    side: 'right'
+  },
+  {
+    id: 7,
+    year: '2024',
+    title: 'Transformasi Digital: IoT & AI',
+    organization: 'Industrial Summit 2024',
+    description: 'Eksplorasi ekosistem Internet of Things dan AI sebagai pilar utama transformasi digital di era industri 4.0.',
+    icon: <Award className="w-6 h-6" />,
+    certificate: '/certificate/Transformasi Digital  Integrasi IoT & Kecerdasan Buatan Untuk Solusi Masa Depan.pdf',
+    skills: ['IoT', 'Artificial Intelligence', 'Industrial 4.0'],
+    side: 'left'
+  },
+  {
+    id: 8,
+    year: '2024',
+    title: 'Entrepreneurship for a Better Future',
+    organization: 'Global Innovation Hub',
+    description: 'Pelatihan kepemimpinan dan strategi inovasi bisnis untuk menciptakan solusi yang berdampak positif bagi masyarakat.',
+    icon: <Award className="w-6 h-6" />,
+    certificate: '/certificate/Entrepreneurship For a Better Future.pdf',
+    skills: ['Entrepreneurship', 'Business Strategy', 'Innovation'],
+    side: 'right'
   }
 ]
 
 export function AchievementSection() {
+  const [viewingCert, setViewingCert] = useState<string | null>(null)
+
   return (
     <section id="achievement" className="relative py-32 px-6 overflow-hidden">
       {/* Background decoration */}
@@ -90,36 +136,58 @@ export function AchievementSection() {
                       {item.title}
                     </h3>
                     <p className="text-cyan-400/80 text-sm font-semibold mb-4">
-                      {item.subtitle}
+                      {item.organization}
                     </p>
                     <p className="text-muted-foreground leading-relaxed font-medium mb-6">
                       {item.description}
                     </p>
 
-                    {/* Certificate Preview */}
-                    <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-slate-700 bg-slate-800/50">
+                    {/* Skills Badges */}
+                    <div className={`flex flex-wrap gap-2 mb-6 ${item.side === 'left' ? 'justify-end' : 'justify-start'}`}>
+                      {item.skills.map(skill => (
+                        <span key={skill} className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300 rounded-full border border-slate-700">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Certificate Preview Placeholder */}
+                    <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-slate-700 bg-slate-800/50 group-hover:border-primary/30 transition-colors">
                       <div className="absolute inset-0 flex items-center justify-center text-slate-500">
                         <Award className="w-12 h-12 opacity-20" />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10"></div>
-                      {/* Fake certificate data if no image */}
                       <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                         <div className="w-12 h-1 bg-primary/30 rounded-full"></div>
-                         <div className="space-y-2">
-                           <div className="w-3/4 h-2 bg-white/10 rounded-full"></div>
-                           <div className="w-1/2 h-2 bg-white/10 rounded-full"></div>
-                         </div>
+                        <div className="w-12 h-1 bg-primary/30 rounded-full"></div>
+                        <div className="space-y-2">
+                          <div className="w-3/4 h-2 bg-white/10 rounded-full"></div>
+                          <div className="w-1/2 h-2 bg-white/10 rounded-full"></div>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Download Button */}
-                    <a 
-                      href={item.downloadUrl}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 bg-indigo-600 text-white text-sm font-bold rounded-full hover:bg-indigo-500 hover:scale-105 transition-all shadow-[0_0_15px_rgba(99,102,241,0.3)]"
-                    >
-                      <Download className="w-4 h-4" />
-                      UNDUH PDF
-                    </a>
+                    {/* Buttons */}
+                    <div className={`flex items-center gap-3 ${item.side === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
+                      {item.certificate && (
+                        <>
+                          <button
+                            onClick={() => setViewingCert(item.certificate)}
+                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-800 text-white text-sm font-bold rounded-full hover:bg-slate-700 hover:scale-105 transition-all border border-slate-700"
+                          >
+                            <Eye className="w-4 h-4" />
+                            LIHAT
+                          </button>
+                          <a
+                            href={item.certificate}
+                            download
+                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-bold rounded-full hover:bg-indigo-500 hover:scale-105 transition-all shadow-[0_0_15px_rgba(99,102,241,0.3)]"
+                          >
+                            <Download className="w-4 h-4" />
+                            PDF
+                          </a>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
 
@@ -159,30 +227,90 @@ export function AchievementSection() {
                   {item.title}
                 </h3>
                 <p className="text-cyan-400/80 text-xs font-semibold mb-3">
-                  {item.subtitle}
+                  {item.organization}
                 </p>
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {item.skills.map(skill => (
+                    <span key={skill} className="px-2 py-0.5 text-[8px] font-bold uppercase bg-slate-800/80 text-slate-400 rounded-md border border-slate-700">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
                 <p className="text-sm text-muted-foreground leading-relaxed font-medium mb-6">
                   {item.description}
                 </p>
 
-                {/* Certificate Preview Mobile */}
-                <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden mb-4 border border-slate-700 bg-slate-800/50">
-                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10"></div>
+                {/* Buttons Mobile */}
+                <div className="flex items-center gap-2">
+                  {item.certificate && (
+                    <>
+                      <button
+                        onClick={() => setViewingCert(item.certificate)}
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 text-white text-xs font-bold rounded-full border border-slate-700"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                        LIHAT
+                      </button>
+                      <a
+                        href={item.certificate}
+                        download
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-xs font-bold rounded-full"
+                      >
+                        <Download className="w-3.5 h-3.5" />
+                        PDF
+                      </a>
+                    </>
+                  )}
                 </div>
-
-                <a 
-                  href={item.downloadUrl}
-                  className="inline-flex items-center gap-2 px-5 py-2 bg-indigo-600 text-white text-xs font-bold rounded-full"
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  UNDUH PDF
-                </a>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* MODAL VIEW PDF */}
+      {viewingCert && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 bg-black/90 backdrop-blur-md animate-in fade-in duration-300">
+          <div className="relative w-full max-w-6xl h-full bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 md:p-6 border-b border-slate-800 bg-slate-900/50">
+              <div className="space-y-1">
+                <h3 className="text-lg md:text-xl font-bold text-white">Pratinjau Sertifikat</h3>
+                <p className="text-xs text-muted-foreground truncate max-w-[200px] md:max-w-md">{viewingCert.split('/').pop()}</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={viewingCert}
+                  download
+                  className="p-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full transition-all"
+                  title="Unduh"
+                >
+                  <Download className="w-5 h-5" />
+                </a>
+                <button
+                  onClick={() => setViewingCert(null)}
+                  className="p-2.5 hover:bg-slate-800 rounded-full transition-colors text-muted-foreground hover:text-white"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 bg-slate-950 overflow-hidden relative">
+              <iframe
+                src={`${viewingCert}#toolbar=0&navpanes=0&scrollbar=0`}
+                className="w-full h-full border-none"
+                title="Sertifikat PDF"
+              />
+              {/* Overlay for aesthetic */}
+              <div className="absolute inset-0 pointer-events-none border-t border-slate-800"></div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
+
 
