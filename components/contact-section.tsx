@@ -5,10 +5,10 @@ import { Mail, Linkedin, Github, Instagram, MessageCircle } from 'lucide-react'
 export function ContactSection() {
   const socialLinks = [
     { icon: Mail, label: 'Email', href: 'mailto:audyhidayat31@gmail.com' },
-    { icon: Linkedin, label: 'LinkedIn', href: '#' },
-    { icon: Github, label: 'GitHub', href: '#https://github.com/Audyhidayat31' },
-    { icon: Instagram, label: 'Instagram', href: '#https://www.instagram.com/audyyhdytz/' },
-    { icon: MessageCircle, label: 'WhatsApp', href: '#https://wa.me/081297472004' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/audyhdyt' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/Audyhidayat31' },
+    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/audyyhdytz/' },
+    { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/6281297472004' },
   ]
 
   return (
@@ -50,6 +50,8 @@ export function ContactSection() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={social.label}
                     className="p-4 rounded-xl bg-slate-800/50 text-muted-foreground hover:text-primary hover:bg-slate-800 transition-all duration-300"
                   >

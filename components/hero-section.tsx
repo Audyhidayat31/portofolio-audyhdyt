@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 export function HeroSection() {
   const socialLinks = [
-    { icon: <Linkedin className="w-5 h-5" />, href: '#' },
-    { icon: <Github className="w-5 h-5" />, href: '#https://github.com/Audyhidayat31' },
-    { icon: <MessageCircle className="w-5 h-5" />, href: '#https://wa.me/081297472004' },
-    { icon: <Instagram className="w-5 h-5" />, href: '#https://www.instagram.com/audyyhdytz/' },
+    { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/in/audyhdyt' },
+    { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Audyhidayat31' },
+    { icon: <MessageCircle className="w-5 h-5" />, href: 'https://wa.me/6281297472004' },
+    { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/audyyhdytz/' },
     { icon: <MoreHorizontal className="w-5 h-5" />, href: '#' },
   ]
 
@@ -62,6 +62,8 @@ export function HeroSection() {
             <a
               key={index}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-900/50 border border-slate-800 text-muted-foreground hover:text-primary hover:border-primary/50 hover:shadow-[0_0_15px_rgba(34,211,238,0.2)] transition-all duration-300 group"
             >
               <div className="group-hover:scale-110 transition-transform duration-300">
