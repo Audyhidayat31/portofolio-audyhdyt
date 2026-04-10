@@ -8,7 +8,7 @@ import { ContactSection } from '@/components/contact-section'
 import { Footer } from '@/components/footer'
 export default function Home() {
   return (
-    <main className="text-foreground relative min-h-screen">
+    <main className="text-foreground relative min-h-screen overflow-x-hidden max-w-full">
       <div className="relative z-10">
         <Navbar />
         <HeroSection />

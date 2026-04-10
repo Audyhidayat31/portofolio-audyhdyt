@@ -26,11 +26,10 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-background/80 backdrop-blur-xl border-b border-primary/20 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)]' 
-          : 'bg-transparent py-6'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+        ? 'bg-background/80 backdrop-blur-xl border-b border-primary/20 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)]'
+        : 'bg-transparent py-6'
+        }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
@@ -58,7 +57,7 @@ export function Navbar() {
           </ul>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 text-foreground/80 hover:text-primary transition-all duration-300 relative z-[60]"
             aria-label="Toggle Menu"
@@ -80,7 +79,7 @@ export function Navbar() {
               onClick={() => setIsOpen(false)}
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[58]"
             />
-            
+
             {/* Menu Content */}
             <motion.div
               initial={{ x: '100%' }}
@@ -100,7 +99,7 @@ export function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="text-2xl font-bold uppercase tracking-[0.2em] text-foreground/70 hover:text-primary transition-all duration-300 flex items-center group"
+                      className="text-sm sm:text-base font-bold uppercase tracking-widest text-foreground/70 hover:text-primary transition-all duration-300 flex items-center group"
                     >
                       <span className="w-0 h-1 bg-primary mr-0 group-hover:w-4 group-hover:mr-4 transition-all duration-300 shadow-[0_0_10px_rgba(34,211,238,0.8)]"></span>
                       {link.name}
@@ -109,8 +108,8 @@ export function Navbar() {
                 ))}
               </div>
 
+              {/* Reduced bottom element (name removed) */}
               <div className="mt-auto">
-                <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold mb-4 opacity-50">Audy Abdillah Hidayat</p>
                 <div className="h-1 w-12 bg-primary rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)]"></div>
               </div>
             </motion.div>

@@ -8,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className="relative min-h-screen text-white antialiased">
+      <body className="relative min-h-screen text-white antialiased overflow-x-hidden max-w-full">
         {/* Render background di lapisan paling bawah */}
         <MovingBackground />
 
