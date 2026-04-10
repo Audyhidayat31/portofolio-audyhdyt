@@ -8,7 +8,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 space-y-6">
             <h2 className="text-2xl font-bold tracking-tighter">
-              AUDY<span className="text-primary">HDYT</span>
+              MY<span className="text-primary">PORTOFOLIO</span>
             </h2>
             <p className="text-muted-foreground font-medium leading-relaxed max-w-sm text-sm">
               Membangun masa depan digital dengan kode dan kreativitas. Berfokus pada Fullstack, AI, dan IoT.
