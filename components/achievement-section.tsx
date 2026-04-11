@@ -194,7 +194,11 @@ export function AchievementSection() {
                 {/* Node */}
                 <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
                   <div className="relative w-12 h-12 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-primary/20 rounded-full blur-md animate-pulse"></div>
+                    {/* Ping Animation Base */}
+                    <div className="absolute w-8 h-8 rounded-full bg-primary/60 animate-ping opacity-75"></div>
+                    {/* Pulse Glow Layer */}
+                    <div className="absolute inset-0 bg-primary/30 rounded-full blur-md animate-pulse"></div>
+                    {/* Main Node */}
                     <div className="relative w-8 h-8 bg-slate-950 border-2 border-primary rounded-full flex items-center justify-center text-primary shadow-[0_0_15px_rgba(34,211,238,0.5)] z-10">
                       {item.icon}
                     </div>
@@ -215,8 +219,17 @@ export function AchievementSection() {
           {achievements.map((item) => (
             <div key={item.id} className="relative pl-12">
               {/* Node Mobile */}
-              <div className="absolute left-0 top-6 -translate-x-1/2 w-8 h-8 bg-slate-950 border-2 border-primary rounded-full flex items-center justify-center text-primary shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10">
-                <Star className="w-4 h-4" />
+              <div className="absolute left-0 top-4 -translate-x-1/2 flex items-center justify-center">
+                <div className="relative w-12 h-12 flex items-center justify-center">
+                  {/* Ping Animation Base */}
+                  <div className="absolute w-8 h-8 rounded-full bg-primary/60 animate-ping opacity-75"></div>
+                  {/* Pulse Glow Layer */}
+                  <div className="absolute inset-0 bg-primary/30 rounded-full blur-md animate-pulse"></div>
+                  {/* Main Node */}
+                  <div className="relative w-8 h-8 bg-slate-950 border-2 border-primary rounded-full flex items-center justify-center text-primary shadow-[0_0_10px_rgba(34,211,238,0.5)] z-10 [&>svg]:w-4 [&>svg]:h-4">
+                    {item.icon}
+                  </div>
+                </div>
               </div>
 
               <div className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm flex flex-col items-start">
