@@ -89,26 +89,46 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body, html {
+
+  body,
+  html {
     @apply overflow-x-hidden;
     max-width: 100%;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     scroll-behavior: smooth;
   }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }
 
 .animate-float {
@@ -120,24 +140,57 @@
 }
 
 @keyframes blob-move-1 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
 
 @keyframes blob-move-2 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-30px, 50px) scale(1.2); }
-  66% { transform: translate(20px, -20px) scale(0.8); }
-  100% { transform: translate(0, 0) scale(1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(-30px, 50px) scale(1.2);
+  }
+
+  66% {
+    transform: translate(20px, -20px) scale(0.8);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
 
 @keyframes blob-move-3 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(50px, 30px) scale(1.1); }
-  66% { transform: translate(-50px, -30px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(50px, 30px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-50px, -30px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
 
 .animate-blob-1 {
@@ -151,4 +204,3 @@
 .animate-blob-3 {
   animation: blob-move-3 25s infinite alternate;
 }
-
