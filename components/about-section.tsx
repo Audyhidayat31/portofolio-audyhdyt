@@ -1,7 +1,7 @@
 export function AboutSection() {
   const stats = [
     { label: 'Proyek Selesai', value: '5+' },
-    { label: 'Teknologi Dikuasai', value: '15+' },
+    { label: 'Teknologi Dikuasai', value: '10+' },
     { label: 'Sertifikasi', value: '10+' },
     { label: 'Pengalaman (Tahun)', value: '1+' },
   ]

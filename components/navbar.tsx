@@ -25,13 +25,15 @@ export function Navbar() {
   ]
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? 'bg-background/80 backdrop-blur-xl border-b border-primary/20 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.1)]'
-        : 'bg-transparent py-6'
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      <div 
+        className={`absolute inset-0 transition-all duration-500 -z-10 ${
+          isScrolled 
+            ? 'bg-background/80 backdrop-blur-xl border-b border-primary/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)]' 
+            : 'bg-transparent'
         }`}
-    >
-      <div className="container mx-auto px-6">
+      />
+      <div className={`relative container mx-auto px-6 transition-all duration-500 ${isScrolled ? 'py-3' : 'py-6'}`}>
         <div className="flex justify-between items-center">
           {/* Neon Logo */}
           <Link href="#" className="relative group">
