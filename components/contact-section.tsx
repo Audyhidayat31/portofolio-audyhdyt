@@ -5,7 +5,7 @@ import { Mail, Linkedin, Github, Instagram, MessageCircle } from 'lucide-react'
 export function ContactSection() {
   const socialLinks = [
     { icon: Mail, label: 'Email', href: 'mailto:audyhidayat31@gmail.com' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/audyhdyt' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/audy-abdillah-hidayat-570942402/' },
     { icon: Github, label: 'GitHub', href: 'https://github.com/Audyhidayat31' },
     { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/audyyhdytz/' },
     { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/6281297472004' },

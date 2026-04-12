@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export function HeroSection() {
   const socialLinks = [
-    { icon: <Linkedin className="w-5 h-5" />, href: '#' },
+    { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/audy-abdillah-hidayat-570942402/' },
     { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Audyhidayat31' },
     { icon: <MessageCircle className="w-5 h-5" />, href: 'https://wa.me/081297472004' },
     { icon: <Instagram className="w-5 h-5" />, href: 'https://www.instagram.com/audyyhdytz/' },

@@ -206,18 +206,33 @@
 }
 
 @keyframes draw-line {
-  0% { stroke-dashoffset: 2000; }
-  100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: 2000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes draw-line-reverse {
-  0% { stroke-dashoffset: -2000; }
-  100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: -2000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes light-travel {
-  0% { stroke-dashoffset: 2000; }
-  100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: 2000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 .animate-draw-1 {
