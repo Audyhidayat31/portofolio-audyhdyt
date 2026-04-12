@@ -204,3 +204,48 @@
 .animate-blob-3 {
   animation: blob-move-3 25s infinite alternate;
 }
+
+@keyframes draw-line {
+  0% { stroke-dashoffset: 2000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-line-reverse {
+  0% { stroke-dashoffset: -2000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes light-travel {
+  0% { stroke-dashoffset: 2000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-draw-1 {
+  stroke-dasharray: 2000;
+  animation: draw-line 20s linear infinite;
+}
+
+.animate-draw-2 {
+  stroke-dasharray: 2000;
+  animation: draw-line-reverse 25s linear infinite;
+}
+
+.animate-draw-3 {
+  stroke-dasharray: 2000;
+  animation: draw-line 30s linear infinite;
+}
+
+.animate-draw-4 {
+  stroke-dasharray: 2000;
+  animation: draw-line-reverse 35s linear infinite;
+}
+
+.animate-light-track {
+  stroke-dasharray: 100 1900;
+  animation: light-travel 15s linear infinite;
+}
+
+.animate-light-track-reverse {
+  stroke-dasharray: 150 1850;
+  animation: light-travel 18s linear infinite reverse;
+}
