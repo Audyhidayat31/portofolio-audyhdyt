@@ -33,12 +33,12 @@ export function AboutSection() {
               <div className="relative group inline-block">
                 {/* Outer Glow (blur) */}
                 <div className="absolute -inset-[2px] rounded-lg blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
-                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] aspect-square animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
                 </div>
 
                 {/* Crisp Border */}
                 <div className="absolute -inset-[2px] rounded-lg overflow-hidden translate-z-0">
-                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400%] aspect-square animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
                 </div>
 
                 <a
