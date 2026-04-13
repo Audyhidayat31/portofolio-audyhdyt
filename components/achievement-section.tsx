@@ -143,63 +143,63 @@ export function AchievementSection() {
                       <span className="text-primary font-bold text-sm tracking-widest mb-2 block uppercase">
                         {item.year}
                       </span>
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-cyan-400/80 text-sm font-semibold mb-4">
-                      {item.organization}
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed font-medium mb-6">
-                      {item.description}
-                    </p>
+                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-cyan-400/80 text-sm font-semibold mb-4">
+                        {item.organization}
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed font-medium mb-6">
+                        {item.description}
+                      </p>
 
-                    {/* Skills Badges */}
-                    <div className={`flex flex-wrap gap-2 mb-6 ${item.side === 'left' ? 'justify-end' : 'justify-start'}`}>
-                      {item.skills.map(skill => (
-                        <span key={skill} className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300 rounded-full border border-slate-700">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Certificate Preview Placeholder */}
-                    <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-slate-700 bg-slate-800/50 group-hover:border-primary/30 transition-colors">
-                      <div className="absolute inset-0 flex items-center justify-center text-slate-500">
-                        <Award className="w-12 h-12 opacity-20" />
+                      {/* Skills Badges */}
+                      <div className={`flex flex-wrap gap-2 mb-6 ${item.side === 'left' ? 'justify-end' : 'justify-start'}`}>
+                        {item.skills.map(skill => (
+                          <span key={skill} className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-slate-300 rounded-full border border-slate-700">
+                            {skill}
+                          </span>
+                        ))}
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10"></div>
-                      <div className="absolute inset-0 p-6 flex flex-col justify-between">
-                        <div className="w-12 h-1 bg-primary/30 rounded-full"></div>
-                        <div className="space-y-2">
-                          <div className="w-3/4 h-2 bg-white/10 rounded-full"></div>
-                          <div className="w-1/2 h-2 bg-white/10 rounded-full"></div>
+
+                      {/* Certificate Preview Placeholder */}
+                      <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 border border-slate-700 bg-slate-800/50 group-hover:border-primary/30 transition-colors">
+                        <div className="absolute inset-0 flex items-center justify-center text-slate-500">
+                          <Award className="w-12 h-12 opacity-20" />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-purple-500/10"></div>
+                        <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                          <div className="w-12 h-1 bg-primary/30 rounded-full"></div>
+                          <div className="space-y-2">
+                            <div className="w-3/4 h-2 bg-white/10 rounded-full"></div>
+                            <div className="w-1/2 h-2 bg-white/10 rounded-full"></div>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Buttons */}
-                    <div className={`flex items-center gap-3 ${item.side === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
-                      {item.certificate && (
-                        <>
-                          <button
-                            onClick={() => setViewingCert(item.certificate)}
-                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-800 text-white text-sm font-bold rounded-full hover:bg-slate-700 hover:scale-105 transition-all border border-slate-700"
-                          >
-                            <Eye className="w-4 h-4" />
-                            LIHAT
-                          </button>
-                          <a
-                            href={item.certificate}
-                            download
-                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-bold rounded-full hover:bg-indigo-500 hover:scale-105 transition-all shadow-[0_0_15px_rgba(99,102,241,0.3)]"
-                          >
-                            <Download className="w-4 h-4" />
-                            PDF
-                          </a>
-                        </>
-                      )}
+                      {/* Buttons */}
+                      <div className={`flex items-center gap-3 ${item.side === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
+                        {item.certificate && (
+                          <>
+                            <button
+                              onClick={() => setViewingCert(item.certificate)}
+                              className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-800 text-white text-sm font-bold rounded-full hover:bg-slate-700 hover:scale-105 transition-all border border-slate-700"
+                            >
+                              <Eye className="w-4 h-4" />
+                              LIHAT
+                            </button>
+                            <a
+                              href={item.certificate}
+                              download
+                              className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white text-sm font-bold rounded-full hover:bg-indigo-500 hover:scale-105 transition-all shadow-[0_0_15px_rgba(99,102,241,0.3)]"
+                            >
+                              <Download className="w-4 h-4" />
+                              PDF
+                            </a>
+                          </>
+                        )}
+                      </div>
                     </div>
-                  </div>
                   </div>
                 </div>
 
@@ -257,47 +257,47 @@ export function AchievementSection() {
 
                 <div className="relative p-6 rounded-[14px] bg-slate-900 z-10 flex flex-col items-start h-full">
                   <span className="text-primary font-bold text-xs tracking-widest mb-1 block uppercase">
-                  {item.year}
-                </span>
-                <h3 className="text-xl font-bold text-white mb-1">
-                  {item.title}
-                </h3>
-                <p className="text-cyan-400/80 text-xs font-semibold mb-3">
-                  {item.organization}
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {item.skills.map(skill => (
-                    <span key={skill} className="px-2 py-0.5 text-[8px] font-bold uppercase bg-slate-800/80 text-slate-400 rounded-md border border-slate-700">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed font-medium mb-6">
-                  {item.description}
-                </p>
+                    {item.year}
+                  </span>
+                  <h3 className="text-xl font-bold text-white mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-cyan-400/80 text-xs font-semibold mb-3">
+                    {item.organization}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {item.skills.map(skill => (
+                      <span key={skill} className="px-2 py-0.5 text-[8px] font-bold uppercase bg-slate-800/80 text-slate-400 rounded-md border border-slate-700">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed font-medium mb-6">
+                    {item.description}
+                  </p>
 
-                {/* Buttons Mobile */}
-                <div className="flex items-center gap-2">
-                  {item.certificate && (
-                    <>
-                      <button
-                        onClick={() => setViewingCert(item.certificate)}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 text-white text-xs font-bold rounded-full border border-slate-700"
-                      >
-                        <Eye className="w-3.5 h-3.5" />
-                        LIHAT
-                      </button>
-                      <a
-                        href={item.certificate}
-                        download
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-xs font-bold rounded-full"
-                      >
-                        <Download className="w-3.5 h-3.5" />
-                        PDF
-                      </a>
-                    </>
-                  )}
-                </div>
+                  {/* Buttons Mobile */}
+                  <div className="flex items-center gap-2">
+                    {item.certificate && (
+                      <>
+                        <button
+                          onClick={() => setViewingCert(item.certificate)}
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 text-white text-xs font-bold rounded-full border border-slate-700"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          LIHAT
+                        </button>
+                        <a
+                          href={item.certificate}
+                          download
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-xs font-bold rounded-full"
+                        >
+                          <Download className="w-3.5 h-3.5" />
+                          PDF
+                        </a>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -319,39 +319,39 @@ export function AchievementSection() {
 
             <div className="relative z-10 w-full h-full bg-slate-900 rounded-[22px] overflow-hidden shadow-2xl flex flex-col">
               {/* Header */}
-            <div className="flex items-center justify-between p-4 md:p-6 border-b border-slate-800 bg-slate-900/50">
-              <div className="space-y-1">
-                <h3 className="text-lg md:text-xl font-bold text-white">Pratinjau Sertifikat</h3>
-                <p className="text-xs text-muted-foreground truncate max-w-[200px] md:max-w-md">{viewingCert.split('/').pop()}</p>
+              <div className="flex items-center justify-between p-4 md:p-6 border-b border-slate-800 bg-slate-900/50">
+                <div className="space-y-1">
+                  <h3 className="text-lg md:text-xl font-bold text-white">Pratinjau Sertifikat</h3>
+                  <p className="text-xs text-muted-foreground truncate max-w-[200px] md:max-w-md">{viewingCert.split('/').pop()}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={viewingCert}
+                    download
+                    className="p-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full transition-all"
+                    title="Unduh"
+                  >
+                    <Download className="w-5 h-5" />
+                  </a>
+                  <button
+                    onClick={() => setViewingCert(null)}
+                    className="p-2.5 hover:bg-slate-800 rounded-full transition-colors text-muted-foreground hover:text-white"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <a
-                  href={viewingCert}
-                  download
-                  className="p-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full transition-all"
-                  title="Unduh"
-                >
-                  <Download className="w-5 h-5" />
-                </a>
-                <button
-                  onClick={() => setViewingCert(null)}
-                  className="p-2.5 hover:bg-slate-800 rounded-full transition-colors text-muted-foreground hover:text-white"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-            </div>
 
-            {/* Content */}
-            <div className="flex-1 bg-slate-950 overflow-hidden relative">
-              <iframe
-                src={`${viewingCert}#toolbar=0&navpanes=0&scrollbar=0`}
-                className="w-full h-full border-none"
-                title="Sertifikat PDF"
-              />
-              {/* Overlay for aesthetic */}
-              <div className="absolute inset-0 pointer-events-none border-t border-slate-800"></div>
-            </div>
+              {/* Content */}
+              <div className="flex-1 bg-slate-950 overflow-hidden relative">
+                <iframe
+                  src={`${viewingCert}#toolbar=0&navpanes=0&scrollbar=0`}
+                  className="w-full h-full border-none"
+                  title="Sertifikat PDF"
+                />
+                {/* Overlay for aesthetic */}
+                <div className="absolute inset-0 pointer-events-none border-t border-slate-800"></div>
+              </div>
             </div>
           </div>
         </div>
