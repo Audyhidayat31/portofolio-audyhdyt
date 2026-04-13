@@ -58,11 +58,23 @@ export function ProjectsSection() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group relative overflow-hidden rounded-3xl bg-slate-900 border border-slate-800 transition-all duration-500 hover:border-primary/50 shadow-2xl"
+              className="group relative h-full rounded-3xl"
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
-              {/* Project Image Area */}
+              {/* Outer Glow (blur) */}
+              <div className="absolute -inset-[2px] rounded-3xl blur-lg opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
+                <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+              </div>
+
+              {/* Crisp Border */}
+              <div className="absolute -inset-[2px] rounded-3xl overflow-hidden translate-z-0">
+                <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+              </div>
+
+              {/* Inner Focus */}
+              <div className="relative z-10 w-full h-full bg-slate-900 rounded-[22px] overflow-hidden shadow-2xl flex flex-col">
+                {/* Project Image Area */}
               <div className={`aspect-video w-full relative transition-transform duration-700 group-hover:scale-105 ${project.image.startsWith('bg-') ? project.image : 'bg-slate-800'}`}>
                 {!project.image.startsWith('bg-') && (
                   <Image
@@ -87,8 +99,8 @@ export function ProjectsSection() {
               </div>
 
               {/* Project Info */}
-              <div className="p-8 space-y-3 relative z-10 bg-slate-900">
-                <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase">
+              <div className="p-8 space-y-3 relative z-10 bg-slate-900 flex-1 flex flex-col">
+                <span className="text-xs font-bold tracking-[0.2em] text-primary uppercase block">
                   {project.category}
                 </span>
                 <h3 className="text-2xl font-bold text-white transition-colors">
@@ -111,7 +123,10 @@ export function ProjectsSection() {
                 </div>
 
                 {/* Glow bar */}
-                <div className={`mt-6 h-1 rounded-full transition-all duration-500 bg-primary/30 ${hoveredId === project.id ? 'w-full bg-primary shadow-[0_0_10px_rgba(34,211,238,0.5)]' : 'w-12'}`}></div>
+                <div className={`mt-auto pt-6`}>
+                  <div className={`h-1 flex-shrink-0 rounded-full transition-all duration-500 bg-primary/30 ${hoveredId === project.id ? 'w-full bg-primary shadow-[0_0_10px_rgba(34,211,238,0.5)]' : 'w-12'}`}></div>
+                </div>
+              </div>
               </div>
             </div>
           ))}

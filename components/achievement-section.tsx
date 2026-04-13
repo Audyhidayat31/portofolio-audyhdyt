@@ -126,12 +126,23 @@ export function AchievementSection() {
               <div key={item.id} className={`flex items-center justify-center relative w-full ${item.side === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
                 {/* Content Side */}
                 <div className="w-1/2 px-12">
-                  <div className={`p-8 rounded-3xl bg-slate-900/40 border border-slate-800 backdrop-blur-xl hover:border-primary/50 transition-all duration-500 group relative shadow-2xl flex flex-col ${item.side === 'left' ? 'items-end text-right' : 'items-start text-left'}`}>
-                    <div className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-slate-900 border border-slate-800 rotate-45 z-0 ${item.side === 'left' ? '-right-2' : '-left-2'}`}></div>
+                  <div className="relative group h-full">
+                    {/* Outer Glow (blur) */}
+                    <div className="absolute -inset-[2px] rounded-3xl blur-lg opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
+                      <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                    </div>
 
-                    <span className="text-primary font-bold text-sm tracking-widest mb-2 block uppercase">
-                      {item.year}
-                    </span>
+                    {/* Crisp Border */}
+                    <div className="absolute -inset-[2px] rounded-3xl overflow-hidden translate-z-0">
+                      <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                    </div>
+
+                    <div className={`relative p-8 rounded-[22px] bg-slate-900 z-10 shadow-2xl flex flex-col h-full ${item.side === 'left' ? 'items-end text-right' : 'items-start text-left'}`}>
+                      <div className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-slate-900 rotate-45 z-[-1] ${item.side === 'left' ? '-right-2' : '-left-2'}`}></div>
+
+                      <span className="text-primary font-bold text-sm tracking-widest mb-2 block uppercase">
+                        {item.year}
+                      </span>
                     <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                       {item.title}
                     </h3>
@@ -189,6 +200,7 @@ export function AchievementSection() {
                       )}
                     </div>
                   </div>
+                  </div>
                 </div>
 
                 {/* Node */}
@@ -232,8 +244,19 @@ export function AchievementSection() {
                 </div>
               </div>
 
-              <div className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm flex flex-col items-start">
-                <span className="text-primary font-bold text-xs tracking-widest mb-1 block uppercase">
+              <div className="relative group h-full">
+                {/* Outer Glow (blur) */}
+                <div className="absolute -inset-[2px] rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
+                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                </div>
+
+                {/* Crisp Border */}
+                <div className="absolute -inset-[2px] rounded-2xl overflow-hidden translate-z-0">
+                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                </div>
+
+                <div className="relative p-6 rounded-[14px] bg-slate-900 z-10 flex flex-col items-start h-full">
+                  <span className="text-primary font-bold text-xs tracking-widest mb-1 block uppercase">
                   {item.year}
                 </span>
                 <h3 className="text-xl font-bold text-white mb-1">
@@ -275,6 +298,7 @@ export function AchievementSection() {
                     </>
                   )}
                 </div>
+                </div>
               </div>
             </div>
           ))}
@@ -284,8 +308,17 @@ export function AchievementSection() {
       {/* MODAL VIEW PDF */}
       {viewingCert && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 bg-black/90 backdrop-blur-md animate-in fade-in duration-300">
-          <div className="relative w-full max-w-6xl h-full bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
-            {/* Header */}
+          <div className="relative w-full max-w-6xl h-full group">
+            <div className="absolute -inset-[2px] rounded-3xl blur-lg opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
+              <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+            </div>
+
+            <div className="absolute -inset-[2px] rounded-3xl overflow-hidden translate-z-0">
+              <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+            </div>
+
+            <div className="relative z-10 w-full h-full bg-slate-900 rounded-[22px] overflow-hidden shadow-2xl flex flex-col">
+              {/* Header */}
             <div className="flex items-center justify-between p-4 md:p-6 border-b border-slate-800 bg-slate-900/50">
               <div className="space-y-1">
                 <h3 className="text-lg md:text-xl font-bold text-white">Pratinjau Sertifikat</h3>
@@ -318,6 +351,7 @@ export function AchievementSection() {
               />
               {/* Overlay for aesthetic */}
               <div className="absolute inset-0 pointer-events-none border-t border-slate-800"></div>
+            </div>
             </div>
           </div>
         </div>
