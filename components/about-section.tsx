@@ -30,12 +30,24 @@ export function AboutSection() {
             </p>
 
             <div className="pt-4">
-              <a
-                href="#contact"
-                className="px-6 py-3 bg-slate-900 border border-slate-800 text-primary font-semibold rounded-lg hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
-              >
-                Unduh CV Saya
-              </a>
+              <div className="relative group inline-block">
+                {/* Outer Glow (blur) */}
+                <div className="absolute -inset-[2px] rounded-lg blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
+                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                </div>
+
+                {/* Crisp Border */}
+                <div className="absolute -inset-[2px] rounded-lg overflow-hidden translate-z-0">
+                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                </div>
+
+                <a
+                  href="#contact"
+                  className="relative z-10 w-full h-full block px-6 py-3 bg-slate-900 rounded-[6px] text-primary font-semibold transition-all duration-300"
+                >
+                  Unduh CV Saya
+                </a>
+              </div>
             </div>
           </div>
 
@@ -44,14 +56,26 @@ export function AboutSection() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="p-6 rounded-2xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 group"
+                className="relative group h-full"
               >
-                <p className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">
-                  {stat.label}
-                </p>
+                {/* Outer Glow (blur) */}
+                <div className="absolute -inset-[2px] rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
+                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                </div>
+
+                {/* Crisp Border */}
+                <div className="absolute -inset-[2px] rounded-2xl overflow-hidden translate-z-0">
+                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                </div>
+
+                <div className="relative p-6 rounded-[14px] bg-slate-900 z-10 h-full flex flex-col justify-center">
+                  <p className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform origin-left">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">
+                    {stat.label}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
