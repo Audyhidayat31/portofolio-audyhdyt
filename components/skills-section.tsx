@@ -34,20 +34,33 @@ export function SkillsSection() {
           {skillCategories.map((category, index) => (
             <div 
               key={index} 
-              className="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-primary/50 transition-all duration-300 shadow-xl"
+              className="relative group h-full"
             >
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                {category.title}
-              </h3>
-              <ul className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <li key={skillIndex} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary/40 rounded-full"></div>
-                    <span className="text-muted-foreground font-medium">{skill}</span>
-                  </li>
-                ))}
-              </ul>
+              {/* Outer Glow (blur) */}
+              <div className="absolute -inset-[2px] rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
+                <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+              </div>
+
+              {/* Crisp Border */}
+              <div className="absolute -inset-[2px] rounded-2xl overflow-hidden translate-z-0">
+                <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+              </div>
+
+              {/* Inner card content */}
+              <div className="relative h-full w-full bg-slate-900 rounded-[14px] p-8 z-10 flex flex-col items-start gap-4 shadow-xl">
+                <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                  <span className="w-2 h-2 bg-primary rounded-full"></span>
+                  {category.title}
+                </h3>
+                <ul className="space-y-4 w-full">
+                  {category.skills.map((skill, skillIndex) => (
+                    <li key={skillIndex} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 bg-primary/40 rounded-full"></div>
+                      <span className="text-muted-foreground font-medium">{skill}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
