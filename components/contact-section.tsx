@@ -17,8 +17,19 @@ export function ContactSection() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/5 blur-[150px] opacity-30"></div>
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="rounded-3xl bg-slate-900/50 border border-slate-800 p-8 md:p-20 text-center space-y-12 backdrop-blur-sm">
-          {/* Heading */}
+        <div className="group relative rounded-3xl">
+          {/* Outer Glow (blur) */}
+          <div className="absolute -inset-[2px] rounded-3xl blur-lg opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
+            <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+          </div>
+
+          {/* Crisp Border */}
+          <div className="absolute -inset-[2px] rounded-3xl overflow-hidden translate-z-0">
+            <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+          </div>
+
+          <div className="relative z-10 rounded-[22px] bg-slate-900 p-8 md:p-20 text-center space-y-12 backdrop-blur-sm">
+            {/* Heading */}
           <div className="space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold text-white">
               Ayo Mulai <span className="text-primary">Berkolaborasi</span>
@@ -60,6 +71,7 @@ export function ContactSection() {
                 )
               })}
             </div>
+          </div>
           </div>
         </div>
 
