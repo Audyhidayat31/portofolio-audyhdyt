@@ -18,7 +18,7 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-primary/40 rounded-full blur-xl scale-110 animate-pulse-glow"></div>
             <div className="relative w-36 h-36 md:w-48 md:h-48 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_30px_rgba(34,211,238,0.3)]">
               <Image
-                src="/profile.jpg"
+                src="/diwayway.jpeg"
                 alt="Profile"
                 fill
                 className="object-cover"
