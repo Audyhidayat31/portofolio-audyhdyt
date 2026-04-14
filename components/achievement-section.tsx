@@ -119,7 +119,9 @@ export function AchievementSection() {
         {/* Timeline Desktop */}
         <div className="hidden md:block relative">
           {/* Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/50 via-primary to-primary/50 -translate-x-1/2 shadow-[0_0_15px_rgba(34,211,238,0.3)]"></div>
+          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-1/2 overflow-hidden shadow-[0_0_15px_rgba(138,43,226,0.5)]">
+            <div className="absolute top-0 left-0 w-full h-[200%] bg-[linear-gradient(180deg,#ff0055_0%,#8a2be2_16%,#00e5ff_33%,#ff0055_50%,#8a2be2_66%,#00e5ff_83%,#ff0055_100%)] animate-slideDown"></div>
+          </div>
 
           <div className="space-y-24">
             {achievements.map((item) => (
@@ -226,7 +228,9 @@ export function AchievementSection() {
 
         {/* Mobile Layout */}
         <div className="md:hidden space-y-12 relative">
-          <div className="absolute left-4 top-0 bottom-0 w-[2px] bg-primary/30"></div>
+          <div className="absolute left-4 top-0 bottom-0 w-[2px] overflow-hidden shadow-[0_0_10px_rgba(138,43,226,0.5)]">
+            <div className="absolute top-0 left-0 w-full h-[200%] bg-[linear-gradient(180deg,#ff0055_0%,#8a2be2_16%,#00e5ff_33%,#ff0055_50%,#8a2be2_66%,#00e5ff_83%,#ff0055_100%)] animate-slideDown"></div>
+          </div>
 
           {achievements.map((item) => (
             <div key={item.id} className="relative pl-12">

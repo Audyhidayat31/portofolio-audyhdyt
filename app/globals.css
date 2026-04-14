@@ -264,3 +264,16 @@
   stroke-dasharray: 150 1850;
   animation: light-travel 18s linear infinite reverse;
 }
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 3s linear infinite;
+}
