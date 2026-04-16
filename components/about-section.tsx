@@ -42,16 +42,29 @@ export function AboutSection() {
           {/* Right Column - Stats Grid */}
           <div className="grid grid-cols-2 gap-4">
             {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="group p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-primary/50 transition-colors duration-300 h-full flex flex-col justify-center"
+              <div 
+                key={index} 
+                className="relative group h-full min-h-[140px]"
               >
-                <p className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform origin-left">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">
-                  {stat.label}
-                </p>
+                {/* Outer Glow (blur) */}
+                <div className="absolute -inset-[2px] rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-opacity duration-500 overflow-hidden translate-z-0">
+                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                </div>
+
+                {/* Crisp Border */}
+                <div className="absolute -inset-[2px] rounded-2xl overflow-hidden translate-z-0">
+                  <div className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_0deg,#ff0055_0%,#8a2be2_33%,#00e5ff_66%,#ff0055_100%)]" />
+                </div>
+
+                {/* Inner card content */}
+                <div className="relative h-full w-full bg-slate-900 rounded-[14px] p-6 z-10 flex flex-col justify-center shadow-xl">
+                  <p className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform origin-left">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm text-muted-foreground font-semibold uppercase tracking-wider">
+                    {stat.label}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
