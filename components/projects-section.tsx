@@ -10,7 +10,7 @@ const projects = [
     title: 'Inventaris Barang',
     category: 'Fullstack Web',
     description: 'Aplikasi manajemen inventaris barang dengan fitur pencatatan stok, laporan, dan manajemen pengguna.',
-    image: '/Inventaris%20Barang.png',
+    image: '/Inventaris Barang.jpeg',
     link: 'https://inventarisbarang-project.vercel.app/',
   },
   {
