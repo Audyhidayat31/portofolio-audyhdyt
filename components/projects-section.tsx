@@ -136,7 +136,7 @@ export function ProjectsSection() {
         <div className="mt-20 text-center">
           <a
             href="#"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-slate-900 border border-slate-800 text-white font-bold rounded-full hover:border-primary/50 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/50 text-primary font-bold rounded-full hover:bg-primary/20 transition-all duration-300"
           >
             Lihat Semua Proyek
             <span>→</span>
