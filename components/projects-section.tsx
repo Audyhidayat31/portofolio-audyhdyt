@@ -31,11 +31,11 @@ const projects = [
   },
   {
     id: 4,
-    title: 'E-Commerce Dashboard',
+    title: 'dyyLEARNING',
     category: 'Fullstack Web',
-    description: 'Responsive admin panel built with Next.js and Supabase, featuring inventory management and sales analytics.',
-    image: 'bg-gradient-to-br from-teal-600 to-emerald-900',
-    link: '#',
+    description: 'Platform E-Learning modern untuk menguasai keterampilan teknologi masa depan dengan antarmuka yang elegan dan interaktif.',
+    image: '/dyylearning.png',
+    link: 'https://dyylearning-project.vercel.app/',
   },
 ]
 
