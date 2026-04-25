@@ -14,10 +14,10 @@ export function GlobalBackground() {
         <svg 
           className="w-full h-full opacity-60" 
           viewBox="0 0 1000 1000" 
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid slice"
         >
           <defs>
-            <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+            <filter id="neon" filterUnits="userSpaceOnUse" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="2" result="blur1" />
               <feGaussianBlur stdDeviation="6" result="blur2" />
               <feGaussianBlur stdDeviation="12" result="blur3" />
@@ -30,7 +30,7 @@ export function GlobalBackground() {
             </filter>
           </defs>
 
-          <g stroke="rgba(14, 165, 233, 0.05)" strokeWidth="1" vectorEffect="non-scaling-stroke">
+          <g stroke="rgba(14, 165, 233, 0.05)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke">
             {/* Base static grid lines */}
             <path d="M 200 0 L 200 1000 M 800 0 L 800 1000 M 0 250 L 1000 250 M 0 750 L 1000 750" />
             <path d="M 0 500 L 1000 500 M 500 0 L 500 1000" />
@@ -39,7 +39,7 @@ export function GlobalBackground() {
           </g>
 
           {/* Animated drawing lines */}
-          <g fill="none" stroke="#0ea5e9" strokeOpacity="0.3" strokeWidth="1" vectorEffect="non-scaling-stroke">
+          <g fill="none" stroke="#0ea5e9" strokeOpacity="0.3" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" vectorEffect="non-scaling-stroke">
             <path className="animate-draw-1" d="M 200 0 L 200 1000" />
             <path className="animate-draw-2" d="M 800 1000 L 800 0" />
             <path className="animate-draw-3" d="M 0 250 L 1000 250" />
@@ -50,7 +50,7 @@ export function GlobalBackground() {
           </g>
 
           {/* Glowing neon moving particles/light lines */}
-          <g fill="none" stroke="#38bdf8" strokeWidth="1.5" filter="url(#neon)" vectorEffect="non-scaling-stroke">
+          <g fill="none" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#neon)" vectorEffect="non-scaling-stroke">
              <path className="animate-light-track" d="M 200 0 L 200 1000" />
              <path className="animate-light-track-reverse" d="M 800 0 L 800 1000" />
              <path className="animate-light-track" d="M 0 250 L 1000 250" />
