@@ -15,30 +15,7 @@ export default function MovingBackground() {
             ></div>
 
             <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1000 1000">
-                <defs>
-                    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#111" />
-                        <stop offset="100%" stopColor="#000" />
-                    </linearGradient>
-                    <linearGradient id="bgGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" stopColor="#1a1a1a" />
-                        <stop offset="100%" stopColor="#050505" />
-                    </linearGradient>
-                    <linearGradient id="bgGrad3" x1="0%" y1="100%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#0a0a0a" />
-                        <stop offset="100%" stopColor="#000" />
-                    </linearGradient>
 
-                </defs>
-
-                {/* Faceted geometric dark shapes */}
-                <polygon points="0,0 700,0 200,1000 0,1000" fill="url(#bgGrad1)" opacity="0.8"/>
-                <polygon points="700,0 1000,0 1000,1000 500,1000" fill="url(#bgGrad2)" opacity="0.6"/>
-                <polygon points="0,200 1000,800 1000,1000 0,1000" fill="url(#bgGrad3)" opacity="0.7"/>
-                <polygon points="0,600 1000,100 1000,0 0,0" fill="#000000" opacity="0.5"/>
-                
-                {/* The central dark diamond-like focus area */}
-                <polygon points="400,0 1000,800 500,1000 0,200" fill="#050505" opacity="0.9" />
 
                 {/* Static Thin White Lines */}
                 <g stroke="#ffffff" strokeWidth="0.5" strokeOpacity="0.15">
