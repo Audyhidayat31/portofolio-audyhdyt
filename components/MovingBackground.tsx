@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function MovingBackground() {
     return (
-        <div className="fixed inset-0 z-[-1] h-screen w-full bg-[#030303] overflow-hidden">
+        <div className="fixed inset-0 z-[-1] w-full h-full bg-[#030303] overflow-hidden">
             {/* Subtle background texture */}
             <div 
                 className="absolute inset-0 opacity-[0.03] mix-blend-screen"
