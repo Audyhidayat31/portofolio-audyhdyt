@@ -48,7 +48,7 @@ export function AboutSection() {
               >
 
                 {/* Inner card content */}
-                <div className="relative h-full w-full bg-slate-900 border border-primary/50 rounded-[14px] p-6 z-10 flex flex-col justify-center shadow-xl">
+                <div className="relative h-full w-full bg-primary/10 backdrop-blur-sm border border-primary/50 hover:bg-primary/20 transition-colors duration-300 rounded-[14px] p-6 z-10 flex flex-col justify-center shadow-xl">
                   <p className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform origin-left">
                     {stat.value}
                   </p>

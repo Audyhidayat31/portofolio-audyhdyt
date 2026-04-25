@@ -39,7 +39,7 @@ export function SkillsSection() {
 
 
               {/* Inner card content */}
-              <div className="relative h-full w-full bg-slate-900 border border-white/10 rounded-[14px] p-8 z-10 flex flex-col items-start gap-4 shadow-xl">
+              <div className="relative h-full w-full bg-primary/10 backdrop-blur-sm border border-primary/50 hover:bg-primary/20 transition-colors duration-300 rounded-[14px] p-8 z-10 flex flex-col items-start gap-4 shadow-xl">
                 <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
                   <span className="w-2 h-2 bg-primary rounded-full"></span>
                   {category.title}
