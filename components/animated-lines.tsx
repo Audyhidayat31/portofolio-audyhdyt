@@ -28,7 +28,7 @@ export default function AnimatedLines() {
   ];
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[1] w-full h-full overflow-hidden mix-blend-screen opacity-90">
+    <div className="pointer-events-none fixed inset-0 z-[1] overflow-hidden mix-blend-screen opacity-90">
       <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1000 1000">
         <defs>
           <filter id="neon-glow-anim" x="-50%" y="-50%" width="200%" height="200%">

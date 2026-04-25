@@ -90,9 +90,8 @@
     @apply border-border outline-ring/50;
   }
 
-  body,
-  html {
-    @apply overflow-x-hidden;
+  body {
+    overflow-x: hidden;
     max-width: 100%;
   }
 
