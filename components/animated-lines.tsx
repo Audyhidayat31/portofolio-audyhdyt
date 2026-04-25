@@ -32,13 +32,9 @@ export default function AnimatedLines() {
       <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1000 1000">
         <defs>
           <filter id="neon-glow-anim" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="1" result="blur1" />
-            <feGaussianBlur stdDeviation="3" result="blur2" />
-            <feGaussianBlur stdDeviation="6" result="blur3" />
+            <feGaussianBlur stdDeviation="3" result="blur" />
             <feMerge>
-              <feMergeNode in="blur3" />
-              <feMergeNode in="blur2" />
-              <feMergeNode in="blur1" />
+              <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
