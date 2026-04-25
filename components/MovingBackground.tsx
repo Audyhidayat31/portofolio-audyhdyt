@@ -4,68 +4,57 @@ import { motion } from "framer-motion";
 
 export default function MovingBackground() {
     return (
-        // Container utama: fixed di belakang semua elemen (z-[-1]) dengan warna dasar gelap
-        <div className="fixed inset-0 z-[-1] h-screen w-full bg-slate-950 overflow-hidden">
-            {/* Grid pattern */}
-            <div
-                className="absolute inset-0 opacity-[0.03] z-0"
+        <div className="fixed inset-0 z-[-1] h-screen w-full bg-[#030303] overflow-hidden">
+            {/* Subtle background texture */}
+            <div 
+                className="absolute inset-0 opacity-[0.03] mix-blend-screen"
                 style={{
-                backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-                backgroundSize: '40px 40px'
+                    backgroundImage: `linear-gradient(45deg, #ffffff 1px, transparent 1px)`,
+                    backgroundSize: '20px 20px'
                 }}
             ></div>
 
-            {/* Abstract lines */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-10 z-0">
-                <div className="absolute top-1/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent rotate-12"></div>
-                <div className="absolute top-2/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/20 to-transparent -rotate-12"></div>
-                <div className="absolute top-3/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent rotate-6"></div>
-            </div>
+            <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1000 1000">
+                <defs>
+                    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#111" />
+                        <stop offset="100%" stopColor="#000" />
+                    </linearGradient>
+                    <linearGradient id="bgGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#1a1a1a" />
+                        <stop offset="100%" stopColor="#050505" />
+                    </linearGradient>
+                    <linearGradient id="bgGrad3" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#0a0a0a" />
+                        <stop offset="100%" stopColor="#000" />
+                    </linearGradient>
 
-            {/* Orb 1: Biru Gelap */}
-            <motion.div
-                className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-900/40 blur-[120px] md:blur-[150px]"
-                animate={{
-                    x: ["0%", "20%", "0%"],
-                    y: ["0%", "30%", "0%"],
-                    scale: [1, 1.2, 1],
-                }}
-                transition={{
-                    duration: 18, // Bergerak sangat lambat (18 detik per loop)
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-            />
+                </defs>
 
-            {/* Orb 2: Ungu */}
-            <motion.div
-                className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-purple-900/30 blur-[120px] md:blur-[150px]"
-                animate={{
-                    x: ["0%", "-30%", "0%"],
-                    y: ["0%", "-20%", "0%"],
-                    scale: [1, 1.3, 1],
-                }}
-                transition={{
-                    duration: 22, // Durasi berbeda agar pergerakannya tidak sinkron (terlihat lebih natural)
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-            />
+                {/* Faceted geometric dark shapes */}
+                <polygon points="0,0 700,0 200,1000 0,1000" fill="url(#bgGrad1)" opacity="0.8"/>
+                <polygon points="700,0 1000,0 1000,1000 500,1000" fill="url(#bgGrad2)" opacity="0.6"/>
+                <polygon points="0,200 1000,800 1000,1000 0,1000" fill="url(#bgGrad3)" opacity="0.7"/>
+                <polygon points="0,600 1000,100 1000,0 0,0" fill="#000000" opacity="0.5"/>
+                
+                {/* The central dark diamond-like focus area */}
+                <polygon points="400,0 1000,800 500,1000 0,200" fill="#050505" opacity="0.9" />
 
-            {/* Orb 3: Aksen Biru Terang (Opsional) */}
-            <motion.div
-                className="absolute top-[40%] left-[30%] w-[40vw] h-[40vw] rounded-full bg-indigo-800/20 blur-[100px] md:blur-[120px]"
-                animate={{
-                    x: ["0%", "40%", "0%"],
-                    y: ["0%", "-40%", "0%"],
-                    scale: [0.8, 1.1, 0.8],
-                }}
-                transition={{
-                    duration: 25,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-            />
+                {/* Static Thin White Lines */}
+                <g stroke="#ffffff" strokeWidth="0.5" strokeOpacity="0.15">
+                    <path d="M 200 1000 L 700 0" />
+                    <path d="M 500 1000 L 1000 0" />
+                    <path d="M -100 600 L 1000 100" />
+                    <path d="M 0 200 L 400 1000" />
+                    <path d="M 400 0 L 1000 800" />
+                    <path d="M 800 0 L 1000 400" />
+                    <path d="M 0 800 L 400 1000" />
+                    {/* Extra structural lines */}
+                    <path d="M 300 0 L 0 500" strokeWidth="0.5" strokeOpacity="0.1" />
+                    <path d="M 700 1000 L 1000 600" strokeWidth="0.5" strokeOpacity="0.1" />
+                    <path d="M 0 400 L 600 0" strokeWidth="0.5" strokeOpacity="0.1" />
+                </g>
+            </svg>
         </div>
     );
-}
+}
